@@ -2,7 +2,7 @@ import webpack from 'webpack'
 
 export default {
   entry: {
-    'mp-yts': ['babel-polyfill', './src']
+    'mp-yts': ['./src']
   },
   output: {
     path: 'lib',
@@ -27,7 +27,13 @@ export default {
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'stage-0'],
-          plugins: ['transform-class-properties']
+          plugins: [
+            'transform-class-properties',
+            ['transform-runtime', {
+              polyfill: false,
+              regenerator: true
+            }]
+          ]
         }
       }
     ],

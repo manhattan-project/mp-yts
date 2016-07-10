@@ -6,7 +6,7 @@ cfg.target = 'web'
 
 cfg.entry = {
   ...cfg.entry,
-  'mp-yts.min': ['babel-polyfill', './src']
+  'mp-yts.min': ['./src']
 }
 
 cfg.plugins = [
